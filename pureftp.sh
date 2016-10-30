@@ -59,7 +59,7 @@ fi
 		chkconfig pureftpd on
         echo "Install Pure-FTPd Completed!"
     else
-        Echo_Red "Pureftpd install failed!"
+        echo "Pureftpd install failed!"
     fi
 }
 
@@ -72,7 +72,7 @@ function Uninstall_Pureftpd(){
     echo "Stop pureftpd..."
     /etc/init.d/pureftpd stop
     echo "Remove service..."
-    Remove_StartUp pureftpd
+    chkconfig --del pureftpd
     echo "Delete files..."
     rm -f /etc/init.d/pureftpd
     rm -rf /usr/local/pureftpd

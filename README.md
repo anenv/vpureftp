@@ -1,4 +1,4 @@
-# vvpn
+# vpureftp
 centos下一键配置Pureftp的FTP服务
 
 ## Centos
