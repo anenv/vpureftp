@@ -17,13 +17,14 @@ echo "#      Author: Anenv(anenv@live.cn)       #"
 echo "###########################################"
 echo ""
 
+function Install_Pureftpd(){
+
 #Disable SeLinux
 if [ -s /etc/selinux/config ]; then
 	sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 fi
-
-function Install_Pureftpd(){
 	echo "Begin Install Pureftpd Service";
+	yum install -y make cmake gcc gcc-c++ curl
 	wget --no-check-certificate https://raw.githubusercontent.com/Anenv/vpureftp/master/conf/pure-ftpd-1.0.42.tar.gz
 	tar -xzvf pure-ftpd-1.0.42.tar.gz
 	cd pure-ftpd-1.0.42
