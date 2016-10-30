@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 ###########################################
-#        Centos6 Install Pureftp          #
+#         Centos Install Pureftp          #
 #      Intro: http://www.anenv.com        #
 #      Author: Anenv(anenv@live.cn)       #
 ###########################################
@@ -55,6 +55,7 @@ function Install_Pureftpd(){
 	if [[ -s /usr/local/pureftpd/sbin/pure-config.pl && -s /usr/local/pureftpd/etc/pure-ftpd.conf && -s /etc/init.d/pureftpd ]]; then
         echo "Starting pureftpd..."
         /etc/init.d/pureftpd start
+		chkconfig pureftpd on
         echo "Install Pure-FTPd Completed!"
     else
         Echo_Red "Pureftpd install failed!"
